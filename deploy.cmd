@@ -1,5 +1,7 @@
 @if "%SCM_TRACE_LEVEL%" NEQ "4" @echo off
-
+:: Thanks to: https://raw.githubusercontent.com/prashanthmadi/azure-django-httphandler/master/deploy.cmd
+:: And: https://prmadi.com/django-app-with-httpplatformhandler-in-azure-app-services-windows/
+:: You sir, deserve a medal!
 :: ----------------------
 :: KUDU Deployment Script
 :: Version: 1.0.8
@@ -99,7 +101,7 @@ echo Detected requirements.txt. RUNNING CUSTOM DEPLOYMENT
 :: 2. Install packages
 echo Pip install requirements.
 D:\home\Python27\python.exe -m pip install --upgrade -r requirements.txt
-IF !ERRORLEVEL! NEQ 0 goto error
+IF !ERRORLEVEL! neq 0 goto error
 
 
 popd
